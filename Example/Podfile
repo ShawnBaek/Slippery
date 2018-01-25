@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Slippery_Example' do
+  pod 'Slippery', :path => '../'
+
+  target 'Slippery_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
