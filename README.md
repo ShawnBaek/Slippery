@@ -27,15 +27,24 @@ pod 'Slippery'
 
 ![Calendar View](./Images/calendar.gif)
 
-![SliceNumver View](./images/slice.gif)
+![SliceNumver View](./Images/slice.gif)
 
-![Photo View](./images/photo.gif)
+![Photo View](./Images/photo.gif)
+
+
+## Acknowledgment
+
+I make this Library inspired by [LGLinearFlow](https://github.com/lukagabric/LGLinearFlow).
+Thank you for sharing your code.
 
 ## Author
 
 shawnbaek, shawn@shawnbaek.com
 
-twitter, @yoshiboarder
+
+## Contact
+
+twitter, [@yoshiboarder](https://twitter.com/yoshiboarder)
 
 ## License
 
