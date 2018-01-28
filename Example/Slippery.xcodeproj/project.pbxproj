@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		00AEFF30262746DD4AB90A52 /* Pods_Slippery_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B172D57FB8AD70159B53549 /* Pods_Slippery_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* CalendarVC.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		7F3A5630201DC9290072240C /* SliceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A562F201DC9290072240C /* SliceVC.swift */; };
+		7F3A5632201DCFD30072240C /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A5631201DCFD30072240C /* PhotoCell.swift */; };
+		7F3A5634201DD0330072240C /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3A5633201DD0330072240C /* PhotoVC.swift */; };
+		7F89A9CD201DA24C00DB98E3 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A9CC201DA24C00DB98E3 /* Date+Extension.swift */; };
+		7F89A9CF201DA32000DB98E3 /* NumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A9CE201DA32000DB98E3 /* NumberCell.swift */; };
 		A48A5A3CDE9FAE5BA4BCA6F7 /* Pods_Slippery_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 605B696DF38877D6267F8ED3 /* Pods_Slippery_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29C4596150EA5B60297AB848 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		29C4596150EA5B60297AB848 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		3545AA3610B2AD402986DFB6 /* Pods-Slippery_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slippery_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slippery_Tests/Pods-Slippery_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B172D57FB8AD70159B53549 /* Pods_Slippery_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Slippery_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE61B0F5E6E4FBB80DD047E /* Pods-Slippery_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slippery_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slippery_Example/Pods-Slippery_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -36,17 +41,22 @@
 		607FACD01AFB9204008FA782 /* Slippery_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Slippery_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Slippery_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Slippery_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		C55B577EC01BFBE1CEC5813F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		7F3A562F201DC9290072240C /* SliceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliceVC.swift; sourceTree = "<group>"; };
+		7F3A5631201DCFD30072240C /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		7F3A5633201DD0330072240C /* PhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
+		7F89A9CC201DA24C00DB98E3 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		7F89A9CE201DA32000DB98E3 /* NumberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCell.swift; sourceTree = "<group>"; };
+		C55B577EC01BFBE1CEC5813F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		EA6579491124302D523E1F58 /* Pods-Slippery_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slippery_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Slippery_Tests/Pods-Slippery_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EB41586C6F32EADDC740CA60 /* Pods-Slippery_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Slippery_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Slippery_Example/Pods-Slippery_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F168AD3F4F3D34ADCF10647A /* Slippery.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Slippery.podspec; path = ../Slippery.podspec; sourceTree = "<group>"; };
+		F168AD3F4F3D34ADCF10647A /* Slippery.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Slippery.podspec; path = ../Slippery.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +123,17 @@
 		607FACD21AFB9204008FA782 /* Example for Slippery */ = {
 			isa = PBXGroup;
 			children = (
+				7F89A9CB201DA22800DB98E3 /* Extension */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				7F3A5633201DD0330072240C /* PhotoVC.swift */,
+				7F3A562F201DC9290072240C /* SliceVC.swift */,
+				607FACD71AFB9204008FA782 /* CalendarVC.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				7F89A9CE201DA32000DB98E3 /* NumberCell.swift */,
+				7F3A5631201DCFD30072240C /* PhotoCell.swift */,
 			);
 			name = "Example for Slippery";
 			path = Slippery;
@@ -157,6 +172,14 @@
 				C55B577EC01BFBE1CEC5813F /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		7F89A9CB201DA22800DB98E3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7F89A9CC201DA24C00DB98E3 /* Date+Extension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +238,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 8V5JV6976E;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -370,8 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* CalendarVC.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				7F89A9CD201DA24C00DB98E3 /* Date+Extension.swift in Sources */,
+				7F89A9CF201DA32000DB98E3 /* NumberCell.swift in Sources */,
+				7F3A5632201DCFD30072240C /* PhotoCell.swift in Sources */,
+				7F3A5630201DC9290072240C /* SliceVC.swift in Sources */,
+				7F3A5634201DD0330072240C /* PhotoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,7 +546,9 @@
 			baseConfigurationReference = EB41586C6F32EADDC740CA60 /* Pods-Slippery_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8V5JV6976E;
 				INFOPLIST_FILE = Slippery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -532,7 +563,9 @@
 			baseConfigurationReference = 5DE61B0F5E6E4FBB80DD047E /* Pods-Slippery_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8V5JV6976E;
 				INFOPLIST_FILE = Slippery/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";

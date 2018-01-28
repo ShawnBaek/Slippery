@@ -1,0 +1,16 @@
+PODS:
+  - Slippery (0.1.0)
+
+DEPENDENCIES:
+  - Slippery (from `../`)
+
+EXTERNAL SOURCES:
+  Slippery:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Slippery: 8636ed2d5096441f11025c7ea8e073b4c0ba8311
+
+PODFILE CHECKSUM: 8b4f4fbe5339c8e4bacdfacd2a936ad1335ab141
+
+COCOAPODS: 1.4.0

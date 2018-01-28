@@ -1,0 +1,6 @@
+framework module Slippery {
+  umbrella header "Slippery-umbrella.h"
+
+  export *
+  module * { export * }
+}

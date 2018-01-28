@@ -1,0 +1,22 @@
+{
+  "name": "Slippery",
+  "version": "0.1.0",
+  "summary": "A short description of Slippery.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/shawnbaek/Slippery",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "shawnbaek": "yoshiboarder@yahoo.com"
+  },
+  "source": {
+    "git": "https://github.com/shawnbaek/Slippery.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Slippery/Classes/**/*"
+}
