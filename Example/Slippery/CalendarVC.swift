@@ -103,11 +103,8 @@ extension CalendarVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     func setupCollectionView(){
         
-        //Highlighting Third Item
         self.collectionViewLayout = SlipperyFlowLayout.configureLayout(collectionView: self.calendarView, itemSize: CGSize(width: 120, height: 180), minimumLineSpacing: 10, highlightOption: .center(.cropping))
         self.collectionViewLayout.scaleItems = true
-        
-        
         self.collectionViewLayout.invalidateLayout()
         self.calendarView.layoutIfNeeded()
         
