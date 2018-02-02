@@ -23,9 +23,74 @@ it, simply add the following line to your Podfile:
 pod 'Slippery'
 ```
 
+### Storyboard
+
+![Guide](./Images/calendar.gif)
+
+Drag UICollectionViewController or UICollectionView in UIViewController
+
+
+Set CollectionViewFlowLayout as `SlipperyFlowLayout`
+
+That's It
+
+
+## Center Mode
+
+Center Mode has two options.
+
+1. cropping
+
+![Guide](./Images/cropped.gif)
+
+cropping mode is cropping the first and last cell
+
+```Swift
+
+highlightOption: .center(.cropping)
+
+```
+
+2. normal
+
+![Guide](./Images/normal.gif)
+
+first and the last cell is always positioning at center.
+
+```Swift
+
+highlightOption: .center(.normal)
+
+```
+
+## Custom Mode
+
+You can set specifit focused position from leading to `first`, `second`, `third`, `fourth` and `fifth`
+
+```Swift
+highlightOption: .custom(.leading, .third)
+```
+Check Example of `SliceVC`
+
+
+## Scale and Opacity Options
+
+You can fully customizing focusing options.
+
+```Swift
+self.collectionViewLayout.minimumOpacityFactor = 0.1
+self.collectionViewLayout.minimumScaleFactor = 1.0
+```
+
+e.g. `minimumScaleFactor = 1.0` means disable the scale mode
+e.g. `minimumScaleFactor = 0.4` means set other cells scale as `0.4`
+
+
+
+
 ## Sample Project
 
-![Calendar View](./Images/calendar.gif)
+![Calendar View](./Images/normal.gif)
 ```swift
 
 func setupCollectionView(){
@@ -115,7 +180,10 @@ shawnbaek, shawn@shawnbaek.com
 
 ## Contact
 
-twitter, [@yoshiboarder](https://twitter.com/yoshiboarder)
+I want to connect developers who loves iOS development. Follow me and Let's keep in touch. I want to make a friends! :smaile:
+[twitter](https://twitter.com/yoshiboarder)
+
+
 
 ## License
 
