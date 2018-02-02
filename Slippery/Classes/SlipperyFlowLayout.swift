@@ -43,7 +43,6 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
     public var minimumScaleFactor: CGFloat = 0.5
     public var minimumOpacityFactor: CGFloat = 0.5
     
-//    public var scaleItems: Bool = false
     public var pageCount: Int = 0
     
     private var pageWidth: CGFloat = 0 {
