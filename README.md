@@ -25,7 +25,7 @@ pod 'Slippery'
 
 ### Storyboard
 
-![Guide](./Images/calendar.gif)
+![Guide](./Images/guide.png)
 
 Drag UICollectionViewController or UICollectionView in UIViewController
 
