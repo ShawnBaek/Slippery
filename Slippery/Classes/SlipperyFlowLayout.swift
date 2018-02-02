@@ -34,21 +34,31 @@ public enum HighlightItem {
 }
 
 
+@available(iOS 10.0, *)
 public class SlipperyFlowLayout: UICollectionViewFlowLayout {
     
     private var lastCollectionViewSize: CGSize = .zero
-    public var scalingOffset: CGFloat = 200
-    public var minimumScaleFactor: CGFloat = 0.1
-    public var scaleItems: Bool = false
+    
+    private var baseOffset: CGFloat = 200
+    public var minimumScaleFactor: CGFloat = 0.5
+    public var minimumOpacityFactor: CGFloat = 0.5
+    
+//    public var scaleItems: Bool = false
     public var pageCount: Int = 0
     
-    private var pageWidth: CGFloat = 0
+    private var pageWidth: CGFloat = 0 {
+        didSet {
+            baseOffset = pageWidth
+        }
+    }
+    
     private var itemCenter: CGFloat = 0
     private var boundsCenter: CGFloat = 0
     private var customOffset: CGFloat = 0
     
     public var highlightOffsetForCell: HighlightItem = HighlightItem.center(.normal)
     public var initialOffset: CGFloat = 0
+    
     
     public static func configureLayout(collectionView: UICollectionView, itemSize: CGSize, minimumLineSpacing: CGFloat, highlightOption: HighlightItem) -> SlipperyFlowLayout {
         
@@ -217,6 +227,7 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
             let pageWidth = self.itemSize.width + self.minimumLineSpacing
             newOffsetX += velocity.x > 0 ? pageWidth: -pageWidth
         }
+       
         
         return CGPoint(x: newOffsetX, y: proposedContentOffset.y)
     }
@@ -275,15 +286,13 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
                 
             }
             
-            let absDistanceFromCenter = min(abs(distanceFromCenter), self.scalingOffset)
-            let scale = absDistanceFromCenter * (self.minimumScaleFactor - 1) / self.scalingOffset + 1
-
-            if scaleItems {
-                newAttributes.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
-            }
+            let absDistanceFromCenter = min(abs(distanceFromCenter), self.baseOffset)
+            let scale = absDistanceFromCenter * (self.minimumScaleFactor - 1) / self.baseOffset + 1
+            let opacity = absDistanceFromCenter * (self.minimumOpacityFactor - 1) / self.baseOffset + 1
             
             
-            newAttributes.alpha = scale
+            newAttributes.transform3D = CATransform3DScale(CATransform3DIdentity, scale, scale, 1)
+            newAttributes.alpha = opacity
             
         }
         

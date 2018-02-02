@@ -65,6 +65,9 @@ extension PhotoVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         
         self.collectionViewLayout = SlipperyFlowLayout.configureLayout(collectionView: self.photoView, itemSize: CGSize(width: 150, height: 180), minimumLineSpacing: 20, highlightOption: .center(.normal))
         
+        self.collectionViewLayout.minimumOpacityFactor = 0.1
+        self.collectionViewLayout.minimumScaleFactor = 1.0
+        
         self.collectionViewLayout.invalidateLayout()
         self.photoView.layoutIfNeeded()
         

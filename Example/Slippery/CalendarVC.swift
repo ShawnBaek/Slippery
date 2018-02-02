@@ -11,6 +11,7 @@ import Slippery
 
 class CalendarVC: UIViewController {
 
+    @IBOutlet weak var weekdayLabel: UILabel!
     @IBOutlet weak var calendarView: UICollectionView!
     private var collectionViewLayout: SlipperyFlowLayout!
     @IBOutlet weak var calendarLabel: UILabel!
@@ -104,7 +105,7 @@ extension CalendarVC: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func setupCollectionView(){
         
         self.collectionViewLayout = SlipperyFlowLayout.configureLayout(collectionView: self.calendarView, itemSize: CGSize(width: 120, height: 180), minimumLineSpacing: 10, highlightOption: .center(.cropping))
-        self.collectionViewLayout.scaleItems = true
+
         self.collectionViewLayout.invalidateLayout()
         self.calendarView.layoutIfNeeded()
         
@@ -157,6 +158,8 @@ extension CalendarVC: UIScrollViewDelegate {
         let monthString = f.shortMonthSymbols[month-1].uppercased()
         
         focusedItem = page
+        
+        weekdayLabel.text = String(describing: weekDayArray.object(at: page)).uppercased()
         calendarString = "\(monthString) \((currentObject as AnyObject).value(forKey: "year")!)"
 
     }

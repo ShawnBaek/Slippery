@@ -65,8 +65,14 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="M2E-cc-gv4"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vo-T4-1ux" userLabel="Weekday">
+                                <rect key="frame" x="166" y="110" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Index: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vY3-B3-AEF">
-                                <rect key="frame" x="0.0" y="136" width="375" height="20.5"/>
+                                <rect key="frame" x="0.0" y="202" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -81,9 +87,11 @@
                         <color key="backgroundColor" name="cardLabel"/>
                         <constraints>
                             <constraint firstItem="0tt-nv-U81" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="4gO-B2-58s"/>
+                            <constraint firstItem="8Vo-T4-1ux" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="5mz-hd-KBd"/>
                             <constraint firstItem="OyE-EX-eAo" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Byp-sx-4Ba"/>
+                            <constraint firstItem="8Vo-T4-1ux" firstAttribute="top" secondItem="OyE-EX-eAo" secondAttribute="top" constant="110" id="GrX-y2-i7l"/>
                             <constraint firstItem="vY3-B3-AEF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="H08-9X-ceg"/>
-                            <constraint firstItem="vY3-B3-AEF" firstAttribute="top" secondItem="OyE-EX-eAo" secondAttribute="bottom" constant="8" id="IHu-2v-aS2"/>
+                            <constraint firstItem="vY3-B3-AEF" firstAttribute="top" secondItem="OyE-EX-eAo" secondAttribute="bottom" constant="74" id="IHu-2v-aS2"/>
                             <constraint firstAttribute="trailing" secondItem="vY3-B3-AEF" secondAttribute="trailing" id="Yer-bs-8ES"/>
                             <constraint firstAttribute="trailing" secondItem="OyE-EX-eAo" secondAttribute="trailing" id="bVw-Pm-sRI"/>
                             <constraint firstItem="OyE-EX-eAo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ceM-fF-qdV"/>
@@ -95,6 +103,7 @@
                         <outlet property="calendarLabel" destination="0tt-nv-U81" id="GRu-Sl-W1Q"/>
                         <outlet property="calendarView" destination="OyE-EX-eAo" id="ksN-eO-QQ1"/>
                         <outlet property="itemLabel" destination="vY3-B3-AEF" id="jck-g7-QEv"/>
+                        <outlet property="weekdayLabel" destination="8Vo-T4-1ux" id="rIY-k5-7y8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
