@@ -13,10 +13,10 @@ public enum Base {
 
 public enum ItemAt : Int {
     case first = 1
-    case second = 2
-    case third = 3
-    case fourth = 4
-    case fifth = 5
+    case second
+    case third
+    case fourth
+    case fifth
 }
 
 //typealias ItemAt = Base.ItemAt
@@ -40,8 +40,6 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
     public var minimumScaleFactor: CGFloat = 0.5
     public var minimumOpacityFactor: CGFloat = 0.5
     
-    public var pageCount: Int = 0
-    
     private var pageWidth: CGFloat = 0 {
         didSet {
             baseOffset = pageWidth
@@ -52,19 +50,23 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
     private var boundsCenter: CGFloat = 0
     private var customOffset: CGFloat = 0
     
-    public var highlightOffsetForCell: HighlightItem = HighlightItem.center(.normal)
+    private var highlightOffsetForCell: HighlightItem = .center(.normal)
     public var initialOffset: CGFloat = 0
     
-    public static func configureLayout(collectionView: UICollectionView, itemSize: CGSize, minimumLineSpacing: CGFloat, highlightOption: HighlightItem) -> SlipperyFlowLayout {
-        
+    public static func configureLayout(
+        collectionView: UICollectionView,
+        itemSize: CGSize,
+        minimumLineSpacing: CGFloat,
+        highlightOption: HighlightItem = .center(.normal)
+    ) -> SlipperyFlowLayout {
         let layout = SlipperyFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = minimumLineSpacing
         layout.itemSize = itemSize
         layout.highlightOffsetForCell = highlightOption
+        
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         collectionView.collectionViewLayout = layout
-        
         return layout
     }
     
@@ -194,9 +196,9 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
         
         var newOffsetX = CGFloat()
         switch highlightOffsetForCell {
-        case .custom(_, _):
+        case .custom:
             newOffsetX = (candidateAttributes?.frame.origin.x)! - pageWidth
-        case .center(_):
+        case .center:
             newOffsetX = candidateAttributes!.center.x - boundsCenter
         }
         
@@ -216,11 +218,9 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
         guard let collectionView = self.collectionView else {
             return super.layoutAttributesForElements(in: rect)
         }
-        let superAttributes = super.layoutAttributesForElements(in: rect)
-        if superAttributes == nil {
+        guard let superAttributes = super.layoutAttributesForElements(in: rect) else {
             return nil
         }
-        
         let contentOffset = collectionView.contentOffset
         let size = collectionView.bounds.size
         
@@ -233,11 +233,9 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
         case .center(_):
             visibleCenterX = visibleRect.midX
         }
-        
         var newAttributesArray = Array<UICollectionViewLayoutAttributes>()
-        
-        for (_, attributes) in superAttributes!.enumerated(){
-            let newAttributes = attributes.copy() as! UICollectionViewLayoutAttributes
+        for attribute in superAttributes {
+            let newAttributes = attribute.copy() as! UICollectionViewLayoutAttributes
             newAttributesArray.append(newAttributes)
             var distanceFromCenter = CGFloat()
             
@@ -247,7 +245,6 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
             case .center(_):
                 distanceFromCenter = visibleCenterX - newAttributes.center.x
             }
-            
             let absDistanceFromCenter = min(abs(distanceFromCenter), self.baseOffset)
             let scale = absDistanceFromCenter * (self.minimumScaleFactor - 1) / self.baseOffset + 1
             let opacity = absDistanceFromCenter * (self.minimumOpacityFactor - 1) / self.baseOffset + 1
