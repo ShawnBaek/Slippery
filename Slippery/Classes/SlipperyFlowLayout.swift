@@ -60,11 +60,14 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
         highlightOption: HighlightItem = .center(.normal)
     ) -> SlipperyFlowLayout {
         let layout = SlipperyFlowLayout()
+        assert(
+            itemSize.height.isLessThanOrEqualTo(collectionView.bounds.height),
+            "Item height should be less then collectionView's height"
+        )
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = minimumLineSpacing
         layout.itemSize = itemSize
         layout.highlightOffsetForCell = highlightOption
-        
         collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         collectionView.collectionViewLayout = layout
         return layout
@@ -75,8 +78,8 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
             return initialOffset
         }
         var updateOffset = CGFloat()
-        let inset = collectionView.bounds.size.width / 2 - self.itemSize.width / 2
-        let cropInset = -(self.itemSize.width - (inset - self.minimumLineSpacing))
+        let inset = collectionView.bounds.size.width / 2 - itemSize.width / 2
+        let cropInset = -(itemSize.width - (inset - minimumLineSpacing))
 
         switch highlightOffsetForCell {
         case .center(let mode):
@@ -99,24 +102,22 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
             return
         }
         
-        let inset = collectionView.bounds.size.width / 2 - self.itemSize.width / 2
-        let cropInset = -(self.itemSize.width - (inset - self.minimumLineSpacing))
+        let inset = collectionView.bounds.size.width / 2 - itemSize.width / 2
+        let cropInset = -(itemSize.width - (inset - minimumLineSpacing))
         
         pageWidth = itemSize.width + minimumLineSpacing
         itemCenter = itemSize.width / 2
         boundsCenter = self.collectionView!.bounds.size.width / 2
-        
         switch option {
         case .center(let mode):
             if mode == .cropping {
                 collectionView.contentInset = UIEdgeInsets.init(top: 0, left: cropInset, bottom: 0 , right: cropInset)
                 collectionView.contentOffset = CGPoint(x: -cropInset, y: 0)
                 initialOffset = pageWidth
-            }else {
+            } else {
                 collectionView.contentInset = UIEdgeInsets.init(top: 0, left: inset, bottom: 0 , right: inset)
                 collectionView.contentOffset = CGPoint(x: -inset, y: 0)
                 initialOffset = 0
-                
             }
         case .custom(let base, let itemAt):
             collectionView.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
@@ -134,7 +135,7 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
             return
         }
         let currentCollectionViewSize = collectionView.bounds.size
-        if !currentCollectionViewSize.equalTo(self.lastCollectionViewSize) {
+        if !currentCollectionViewSize.equalTo(lastCollectionViewSize) {
             self.configureInset(for: highlightOffsetForCell)
             self.lastCollectionViewSize = currentCollectionViewSize
         }
