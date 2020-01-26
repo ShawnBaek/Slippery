@@ -1,22 +1,24 @@
 {
   "name": "Slippery",
-  "version": "0.1.0",
-  "summary": "A short description of Slippery.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.2.0",
+  "summary": "Slippery is UICollectionViewFlowlayout to highlight the cell.",
+  "description": "TODO: Easy to customize your CollectionView styles and user-facing swipe interaction.",
   "homepage": "https://github.com/shawnbaek/Slippery",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "shawnbaek": "yoshiboarder@yahoo.com"
+    "shawnbaek": "shawn@shawnbaek.com"
   },
   "source": {
     "git": "https://github.com/shawnbaek/Slippery.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "11.0"
   },
-  "source_files": "Slippery/Classes/**/*"
+  "swift_versions": "4.0",
+  "source_files": "Slippery/Classes/SlipperyFlowLayout.swift",
+  "swift_version": "4.0"
 }

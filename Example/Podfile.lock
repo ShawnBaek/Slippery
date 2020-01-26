@@ -1,16 +1,16 @@
 PODS:
-  - Slippery (0.1.0)
+  - Slippery (0.2.0)
 
 DEPENDENCIES:
   - Slippery (from `../`)
 
 EXTERNAL SOURCES:
   Slippery:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Slippery: 8636ed2d5096441f11025c7ea8e073b4c0ba8311
+  Slippery: ffbbab1cff18cd96a5dffabce40a5b9b45c07b77
 
 PODFILE CHECKSUM: 8b4f4fbe5339c8e4bacdfacd2a936ad1335ab141
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.8.4
