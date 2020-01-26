@@ -198,11 +198,11 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
                 let candidateOffset = (candidateAttributes?.frame.origin.x)! + pageWidth
                 let proposedOffset = proposedContentOffsetCenterX + pageWidth
                 
-                if fabs(attributesOffset - proposedOffset) < fabs(candidateOffset - proposedOffset) {
+                if abs(attributesOffset - proposedOffset) < abs(candidateOffset - proposedOffset) {
                     candidateAttributes = attributes
                 }
             case .center(_):
-                if fabs(attributes.center.x - proposedContentOffsetCenterX) < fabs(candidateAttributes!.center.x - proposedContentOffsetCenterX) {
+                if abs(attributes.center.x - proposedContentOffsetCenterX) < abs(candidateAttributes!.center.x - proposedContentOffsetCenterX) {
                     candidateAttributes = attributes
                 }
             }
