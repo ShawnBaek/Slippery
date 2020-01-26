@@ -66,7 +66,7 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
         layout.minimumLineSpacing = minimumLineSpacing
         layout.itemSize = itemSize
         layout.highlightOffsetForCell = highlightOption
-        collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         collectionView.collectionViewLayout = layout
         
         return layout
@@ -120,18 +120,18 @@ public class SlipperyFlowLayout: UICollectionViewFlowLayout {
         switch option {
         case .center(let mode):
             if mode == .cropping {
-                self.collectionView!.contentInset = UIEdgeInsetsMake(0, cropInset, 0 , cropInset)
+                self.collectionView!.contentInset = UIEdgeInsets.init(top: 0, left: cropInset, bottom: 0 , right: cropInset)
                 self.collectionView!.contentOffset = CGPoint(x: -cropInset, y: 0)
                 initialOffset = pageWidth
             }else {
-                self.collectionView!.contentInset = UIEdgeInsetsMake(0, inset, 0 , inset)
+                self.collectionView!.contentInset = UIEdgeInsets.init(top: 0, left: inset, bottom: 0 , right: inset)
                 self.collectionView!.contentOffset = CGPoint(x: -inset, y: 0)
                 initialOffset = 0
                 
             }
         case .custom(let base, let itemAt):
             
-            self.collectionView!.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
+            self.collectionView!.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0)
             
             if base == .leading {
                 customOffset = (pageWidth * CGFloat(itemAt.rawValue - 1)) + itemCenter
