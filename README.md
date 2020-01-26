@@ -11,17 +11,24 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-Swift 4.0
-iOS 11.0
+Swift 5.1
+iOS 11.0 - 13.0
 
 ## Installation
 
+### CocoaPods
 Slippery is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'Slippery'
 ```
+
+### Swift Package Manager
+
+xcode -> Projects -> Swift Package Manager
+
+https://github.com/ShawnBaek/Slippery.git
 
 ### Storyboard
 
