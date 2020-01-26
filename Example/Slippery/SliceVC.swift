@@ -50,7 +50,6 @@ class SliceVC: UIViewController {
 extension SliceVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     private var intialOffset: CGFloat {
         return self.collectionViewLayout.initialOffset
-        
     }
     
     
@@ -62,9 +61,8 @@ extension SliceVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColle
         
     }
     
-    func setupCollectionView(){
-        
-        self.collectionViewLayout = SlipperyFlowLayout.configureLayout(collectionView: self.sliceView, itemSize: CGSize(width: 30, height: 180), minimumLineSpacing: 20, highlightOption: .custom(.leading, .third))
+    func setupCollectionView() {
+        self.collectionViewLayout = SlipperyFlowLayout.configureLayout(collectionView: self.sliceView, itemSize: CGSize(width: 30, height: self.sliceView.frame.height), minimumLineSpacing: 20, highlightOption: .custom(.leading, .third))
         
         self.collectionViewLayout.invalidateLayout()
         self.sliceView.layoutIfNeeded()
